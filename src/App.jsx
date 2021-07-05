@@ -3,7 +3,7 @@ import { Layout, Menu, Input, Button, Row, Col} from 'antd';
 import { Link } from 'react-router-dom';
 import { Home } from "./pages/Home";
 import { LoginPage } from "./pages/Login";
-import './css/header.css'; 
+import './css/app.css'; 
 
 const { Header, Content, Footer } = Layout;
 

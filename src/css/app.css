@@ -6,10 +6,15 @@
   padding-left: 20px;
 }
 
-
 .pesquisar {
   border-left: 1px solid #a1a6a8;
   padding-left: 20px;
   width: 300px;
   margin-top: 15px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
