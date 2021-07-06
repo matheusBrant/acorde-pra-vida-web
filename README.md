@@ -51,7 +51,6 @@ Para executar o projeto local, execute os seguintes comandos na pasta raiz:
   - (2-5%) Animações, transições e efeitos visuais diversos (onde fizer sentido)
     - ~~(2%) Modo com menos animações~~
   - ~~(2%) Modo de impressão (se fizer sentido)~~
-
   - (5%) Organização em componentes
   - (3-10%) Uso de APIs do HTML5 (vide seminário)
   - ~~(2-10%) Interatividade para melhorar a experiência de uso (eg, a [Ovelhita][ovelhas] na página das ovelhas)~~
