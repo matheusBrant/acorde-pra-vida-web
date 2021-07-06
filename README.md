@@ -45,11 +45,13 @@ Para executar o projeto local, execute os seguintes comandos na pasta raiz:
     - ~~Algoritmos de alocação de recursos/tarefas, _match-making_, problema da mochila, determinação de caminhos...~~
     - ~~Algoritmos de computação gráfica _off-line_ (eg, _ray tracing_)~~
 - _Front-end_:
+
   - (7%) Todas as páginas _responsive_
   - (3%) Modo escuro
   - (2-5%) Animações, transições e efeitos visuais diversos (onde fizer sentido)
     - ~~(2%) Modo com menos animações~~
   - ~~(2%) Modo de impressão (se fizer sentido)~~
+
   - (5%) Organização em componentes
   - (3-10%) Uso de APIs do HTML5 (vide seminário)
   - ~~(2-10%) Interatividade para melhorar a experiência de uso (eg, a [Ovelhita][ovelhas] na página das ovelhas)~~
