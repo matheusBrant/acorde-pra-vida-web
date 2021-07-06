@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Acorde pra vida
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Frontend project for "Acorde pra vida!" website, part of the fianl project from Web Development subject at CEFET-MG
 
-## Available Scripts
+## Integrantes
 
-In the project directory, you can run:
+- [Mateus Mourão](https://github.com/mmdfmateus)
+- [Matheus Brant](https://github.com/matheusBrant)
+- [Matheus Pinheiro](https://github.com/MatheusPinheirodeSouza1)
+- [Igor Lacerda](https://github.com/GitScrider)
+- [Tulio Bittar](https://github.com/mmdfmateus)
 
-### `npm start`
+## Getting started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Para executar o projeto local, execute os seguintes comandos na pasta raiz:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- `npm install` para instalar as dependências
+- `npm start` para executar o projeto na porta 3000
 
-### `npm test`
+## Opicionais que serão abordados
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Gestão de usuários:
+  - (4%) Receber e-mail ao se cadastrar
+  - (3%) Fluxo de "esqueci minha senha"
+  - (5%) Integração com autenticação por 3ºs (Google)
+  - (3-7%) Possibilidade de alterar dados do perfil
+  - ~~(5%) Autenticação de 2 fatores~~
+- Engenharia de Software:
+  - (1-10%) Testes automatizados
+  - (2-6%) Processo de _build_ para _assets_ do _front-end_:
+    - Minimizar arquivos CSS e JS
+    - Eliminação de código morto JS
+  - (5%) Integração contínua durante o desenvolvimento (_build_ + test + _deploy_)
+  - (5%) Uso de _containers_ (eg Docker) para isolar ambientes e torná-los facilmente reprodutíveis
+  - (5%) Descrição histórias de usuário
+    - (+5%) Uso de _pull requests_ (PRs) para cada história
+- Integração:
+  - (5-10%) APIs de terceiros para fornecer dados do usuário (API do Letras)
+  - ~~(3-7%) APIs "cosméticas" (eg, previsão do tempo para fazer algum efeitinho)~~
+  - ~~(6%) APIs de serviço de hospedagem (eg, da AWS para armazenar fotos enviadas por usuários)~~
+- ~~Inteligência:~~
+  - ~~(5-13%) Alguma inteligência além de um CRUD. Exemplos:~~
+    - ~~Algoritmos de recuperação da informação~~
+    - ~~Algoritmos de aprendizado de máquina~~
+    - ~~Algoritmos de alocação de recursos/tarefas, _match-making_, problema da mochila, determinação de caminhos...~~
+    - ~~Algoritmos de computação gráfica _off-line_ (eg, _ray tracing_)~~
+- _Front-end_:
+  - (7%) Todas as páginas _responsive_
+  - (3%) Modo escuro
+  - (2-5%) Animações, transições e efeitos visuais diversos (onde fizer sentido)
+    - ~~(2%) Modo com menos animações~~
+  - ~~(2%) Modo de impressão (se fizer sentido)~~
+  - (5%) Organização em componentes
+  - (3-10%) Uso de APIs do HTML5 (vide seminário)
+  - ~~(2-10%) Interatividade para melhorar a experiência de uso (eg, a [Ovelhita][ovelhas] na página das ovelhas)~~
