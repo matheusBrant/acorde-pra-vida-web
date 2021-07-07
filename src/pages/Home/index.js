@@ -13,8 +13,6 @@ function Home() {
       const songs = await getTopSongs();
       const artists = await getTopArtists();
 
-      await new Promise((resolve) => setTimeout(resolve, 5000));
-
       setSongs(songs.mus.week.all);
       setArtists(artists.art.week.all);
     }

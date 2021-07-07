@@ -1,4 +1,4 @@
-@import '~antd/dist/antd.css';
+@import "~antd/dist/antd.css";
 
 .site-layout-content {
   min-height: 280px;
@@ -27,7 +27,7 @@
 }
 
 footer {
-  text-align: 'center';
+  text-align: "center";
   bottom: 0;
   width: 100%;
 }
@@ -49,7 +49,6 @@ footer {
     display: none;
   }
 }
-
 
 @media only screen and (min-width: 0) and (max-width: 700px) {
 }
