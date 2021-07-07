@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { MainLayout } from "./layout/MainLayout";
 import { LoginPage } from "./pages/Login";
 import Home from "./pages/Home";
+import AddChordsPage from "./pages/AddChords";
 
 const RouteWithLayout = ({ component: Component, layout: Layout, ...rest }) => (
   <Route
@@ -20,6 +21,11 @@ export const App = () => {
       <Router>
         <RouteWithLayout layout={MainLayout} path="/home" component={Home} />
         <Route path="/login" component={LoginPage} />
+        <RouteWithLayout
+          layout={MainLayout}
+          path="/add-chords"
+          component={AddChordsPage}
+        />
       </Router>
     </>
   );
