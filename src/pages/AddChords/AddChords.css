@@ -1,0 +1,15 @@
+.col {
+  /* border: 1px solid black; */
+}
+
+.row {
+  /* border: 1px solid red; */
+}
+
+#components-grid-demo-flex-align [class~="row"] {
+  background: rgba(128, 128, 128, 0.08);
+}
+
+h1 {
+  text-align: center;
+}
