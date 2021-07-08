@@ -30,6 +30,9 @@ export const MainLayout = (props) => {
                 <Menu.Item key="musicas">
                   <Link to="/musicas">Músicas</Link>
                 </Menu.Item>
+                <Menu.Item key="ranking">
+                  <Link to="/ranking">Ranking</Link>
+                </Menu.Item>
               </Menu>
             </Col>
             <Col className="botoes">
