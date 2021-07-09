@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { MainLayout } from "./layout/MainLayout";
 import { LoginPage } from "./pages/Login";
 import Home from "./pages/Home";
+import AddChordsPage from "./pages/AddChords";
+import ChordsPage from "./pages/Chords";
 
 const RouteWithLayout = ({ component: Component, layout: Layout, ...rest }) => (
   <Route
@@ -18,8 +20,18 @@ export const App = () => {
   return (
     <>
       <Router>
-        <RouteWithLayout layout={MainLayout} path="/home" component={Home} />
         <Route path="/login" component={LoginPage} />
+        <RouteWithLayout layout={MainLayout} path="/home" component={Home} />
+        <RouteWithLayout
+          layout={MainLayout}
+          path="/add-chords"
+          component={AddChordsPage}
+        />
+        <RouteWithLayout
+          layout={MainLayout}
+          path="/chords"
+          component={ChordsPage}
+        ></RouteWithLayout>
       </Router>
     </>
   );
