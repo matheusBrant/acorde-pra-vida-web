@@ -16,6 +16,16 @@ const { Option } = Select;
 export default function AddChordsPage() {
   const [editorState, setEditorState] = useState({});
   const [textArea, setTextArea] = useState({});
+  const [youtubeVideoId, setYoutubeVideoId] = useState("");
+
+  const youtubeUrlRegex = /https:\/\/www\.youtube\.com\/watch\?v=(.{11})/;
+
+  const onYoutubeUrlChange = (ev) => {
+    const result = youtubeUrlRegex.exec(ev.target.value);
+    if (result && result[1]) {
+      setYoutubeVideoId(result[1]);
+    }
+  };
 
   useEffect(() => {
     setEditorState(EditorState.createEmpty());
@@ -129,7 +139,7 @@ export default function AddChordsPage() {
                   </Col>
                   <Col span={10}>
                     <Form.Item
-                      name={["password"]}
+                      name={["level"]}
                       label="Dificuldade"
                       rules={[
                         {
@@ -161,8 +171,24 @@ export default function AddChordsPage() {
             align="middle"
           >
             <Card className="videoPlayer" title="Video">
+              <Form>
+                <Form.Item
+                  name={["youtube_url"]}
+                  label="Link no YouTube"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Insira um link válido",
+                      pattern: youtubeUrlRegex,
+                    },
+                  ]}
+                  onChange={onYoutubeUrlChange}
+                >
+                  <Input placeholder="Ex. Xuxa" />
+                </Form.Item>
+              </Form>
               <YouTube
-                videoId="GI90cJXEfM0"
+                videoId={youtubeVideoId}
                 opts={{
                   height: "360",
                   width: "480",
