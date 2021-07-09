@@ -13,3 +13,21 @@
 h1 {
   text-align: center;
 }
+
+.editor,
+.editor-wrapper {
+  background: #fff;
+  height: 600px;
+  max-height: 600px;
+  width: 100%;
+}
+
+/* .preview {
+  font-family: Arial;
+  font-size: 13px;
+  color: #424242;
+  line-height: normal;
+  font-weight: 600;
+  white-space: pre-line;
+  margin-bottom: 120px;
+} */

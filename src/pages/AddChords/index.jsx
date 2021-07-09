@@ -9,25 +9,18 @@ import AddChordsForm from "./AddChordsForm";
 import { EditorState, convertToRaw } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import "../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-// import draftToHtml from "draftjs-to-html";
+import draftToHtml from "draftjs-to-html";
 // import htmlToDraft from "html-to-draftjs";
 
 export default function AddChordsPage() {
-  const [editorState, setEditorState] = useState({});
-  const [textArea, setTextArea] = useState({});
+  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+  const [textArea, setTextArea] = useState("");
   const [youtubeVideoId, setYoutubeVideoId] = useState("");
 
-  useEffect(() => {
-    setEditorState(EditorState.createEmpty());
-    // setTextArea(editorState.getCurrentContent());
-  }, []);
-
   const onEditorStateChange = (editorState) => {
-    setEditorState({
-      editorState,
-    });
-    // setTextArea(editorState.getCurrentContent());
-    console.log(editorState);
+    setEditorState(editorState);
+    let result = draftToHtml(convertToRaw(editorState.getCurrentContent()));
+    setTextArea(result);
   };
 
   return (
@@ -51,22 +44,10 @@ export default function AddChordsPage() {
         <Col span={12} className="col">
           <div>
             <Editor
-              wrapperStyle={{
-                borderWidth: 1,
-                borderStyle: "solid",
-                borderColor: "#F1F1F1",
-                background: "#fff",
-                height: "700px",
-                width: "100%",
-              }}
-              toolbarStyle={{
-                display: "flex",
-                // flexDirection: "column",
-                justifyContent: "center",
-              }}
-              // editorState={editorState}
-              wrapperClassName="editor-wrapper"
               editorClassName="editor"
+              wrapperClassName="editor-wrapper"
+              toolbarClassName="editortoolbar"
+              editorState={editorState}
               onEditorStateChange={onEditorStateChange}
               toolbar={{
                 options: [
@@ -79,12 +60,14 @@ export default function AddChordsPage() {
                 ],
               }}
             />
-            {/* <textarea
-          disabled
-          value={editorState && draftToHtml(convertToRaw(textArea))}
-        /> */}
           </div>
         </Col>
+        {/* <Card >
+          <div
+            className="preview"
+            dangerouslySetInnerHTML={{ __html: textArea }}
+          ></div>
+        </Card> */}
         <Col span={10} className="col">
           <Row
             gutter={[0, 24]}
