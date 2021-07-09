@@ -2,7 +2,10 @@ import React from "react";
 import { Row, Col, Input, Form, Button, Select } from "antd";
 const { Option } = Select;
 
-export default function AddChordsForm({ onYoutubeVideoUpdate }) {
+export default function AddChordsForm({
+  onYoutubeVideoUpdate,
+  chordsHtmlString,
+}) {
   const youtubeUrlRegex = /https:\/\/www\.youtube\.com\/watch\?v=(.{11})/;
 
   const onYoutubeUrlChange = (ev) => {
@@ -12,8 +15,9 @@ export default function AddChordsForm({ onYoutubeVideoUpdate }) {
     }
   };
 
-  function handleFinish(a) {
-    console.log(a);
+  function handleFinish(object) {
+    object.chordsHtmlString = chordsHtmlString;
+    console.log(object);
   }
 
   return (

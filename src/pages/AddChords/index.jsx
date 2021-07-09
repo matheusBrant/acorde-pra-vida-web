@@ -14,13 +14,13 @@ import draftToHtml from "draftjs-to-html";
 
 export default function AddChordsPage() {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
-  const [textArea, setTextArea] = useState("");
+  const [chordsHtmlString, setChordsHtmlString] = useState("");
   const [youtubeVideoId, setYoutubeVideoId] = useState("");
 
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
     let result = draftToHtml(convertToRaw(editorState.getCurrentContent()));
-    setTextArea(result);
+    setChordsHtmlString(result);
   };
 
   return (
@@ -78,6 +78,7 @@ export default function AddChordsPage() {
             <Card className="ChordsInfo" title="Informações da música">
               <AddChordsForm
                 onYoutubeVideoUpdate={setYoutubeVideoId}
+                chordsHtmlString={chordsHtmlString}
               ></AddChordsForm>
             </Card>
           </Row>
