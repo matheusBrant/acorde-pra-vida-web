@@ -44,6 +44,10 @@ footer {
   height: 100%;
 }
 
+.rankingCard {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
 @media only screen and (min-width: 0) and (max-width: 1200px) {
   .pesquisarCol {
     display: none;

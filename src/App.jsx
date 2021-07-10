@@ -21,7 +21,7 @@ export const App = () => {
     <>
       <Router>
         <Route path="/login" component={LoginPage} />
-        <RouteWithLayout layout={MainLayout} path="/home" component={Home} />
+        <RouteWithLayout exact layout={MainLayout} path={ ["/", "/home"] } component={Home} />
         <RouteWithLayout
           layout={MainLayout}
           path="/add-chords"

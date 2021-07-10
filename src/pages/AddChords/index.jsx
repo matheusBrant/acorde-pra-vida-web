@@ -29,20 +29,17 @@ export default function AddChordsPage() {
         gutter={[0, 24]}
         className="row"
         justify="space-around"
-        align="middle"
       >
-        <Col span={4} className="col">
+        <Col>
           <h1>Adicionar nova cifra</h1>
         </Col>
       </Row>
       <Row
         gutter={[0, 24]}
-        className="row"
         justify="space-around"
-        align="middle"
       >
-        <Col span={12} className="col">
-          <div>
+        <Col sm={20} xl={12}>
+          <Card className="rankingCard editorCard">
             <Editor
               editorClassName="editor"
               wrapperClassName="editor-wrapper"
@@ -60,7 +57,7 @@ export default function AddChordsPage() {
                 ],
               }}
             />
-          </div>
+          </Card>
         </Col>
         {/* <Card >
           <div
@@ -68,42 +65,40 @@ export default function AddChordsPage() {
             dangerouslySetInnerHTML={{ __html: textArea }}
           ></div>
         </Card> */}
-        <Col span={10} className="col">
-          <Row
-            gutter={[0, 24]}
-            className="row"
-            justify="space-around"
-            align="middle"
-          >
-            <Card className="ChordsInfo" title="Informações da música">
+        <Col sm={20} xl={11} className="col">
+          <Card className="rankingCard ChordsInfo" title="Informações da música">
+            <Row
+              gutter={[0, 24]}
+              justify="space-around"
+              align="middle"
+            >
               <AddChordsForm
                 onYoutubeVideoUpdate={setYoutubeVideoId}
                 chordsHtmlString={chordsHtmlString}
               ></AddChordsForm>
-            </Card>
-          </Row>
-          <Row
-            gutter={[0, 24]}
-            className="row"
-            justify="space-around"
-            align="middle"
-          >
-            <Card className="videoPlayer" title="Video">
-              <Form></Form>
-              <YouTube
-                videoId={youtubeVideoId}
-                opts={{
-                  height: "360",
-                  width: "480",
-                }}
-              />
-            </Card>
-          </Row>
+            </Row>
+            <Row
+              gutter={[0, 24]}
+              justify="space-around"
+              align="middle"
+            >
+              <Card className="videoPlayer" title="Video">
+                <Form></Form>
+                <YouTube
+                  videoId={youtubeVideoId}
+                  opts={{
+                    height: "360",
+                    width: "480",
+                  }}
+                />
+              </Card>
+            </Row>
+          </Card>
         </Col>
       </Row>
-      <Row gutter={0} className="row" justify="space-around" align="middle">
-        <Col span={10} className="col"></Col>
-        <Col span={10} className="col"></Col>
+      <Row gutter={0} justify="space-around" align="middle">
+        <Col span={10}></Col>
+        <Col span={10}></Col>
       </Row>
     </>
   );
