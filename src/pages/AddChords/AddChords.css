@@ -1,0 +1,33 @@
+#components-grid-demo-flex-align [class~="row"] {
+  background: rgba(128, 128, 128, 0.08);
+}
+
+h1 {
+  text-align: center;
+}
+
+.editor,
+.editor-wrapper {
+  background: #fff;
+  height: 600px;
+  max-height: 600px;
+  width: 100%;
+}
+
+.editorCard {
+  height: 100%;
+}
+
+.rdw-editor-main {
+  height: 90% !important;
+}
+
+/* .preview {
+  font-family: Arial;
+  font-size: 13px;
+  color: #424242;
+  line-height: normal;
+  font-weight: 600;
+  white-space: pre-line;
+  margin-bottom: 120px;
+} */

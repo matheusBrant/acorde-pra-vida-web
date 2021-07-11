@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 
-import { Card, Row, Col } from "antd";
+import { Card, Row, Col, List } from "antd";
 
 function Home() {
   const [songs, setSongs] = useState([]);
@@ -34,15 +34,6 @@ function Home() {
     return await response.json();
   };
 
-  const renderSongsli = (row) => {
-    return (
-      <li>
-        <b>{row.name}</b>
-        <p>{row.art.name}</p>
-      </li>
-    );
-  };
-
   const renderArtistli = (row) => {
     return (
       <li>
@@ -53,29 +44,46 @@ function Home() {
 
   return (
     <>
-      <Row className="Ranking">
-        <Col span={16} offset={4}>
+      <Row className="ranking">
+        <Col span={18} offset={3}>
           <Card
-            className="RankingCard"
+            className="card"
             title="Músicas do momento"
             extra={<a href="#">Mostrar top 100 músicas</a>}
           >
-            <div className="RankingItems">
-              <ol>{songs.map(renderSongsli)}</ol>
-            </div>
+            <List
+              grid={{ gutter: 16  , column: 3 }}
+              dataSource={songs}
+              renderItem={(item, index) => (
+                <List.Item>
+                  <List.Item.Meta
+                    title={<a href="/chords">{index + 1} - {item.name}</a>}
+                    description={item.art.name}
+                  />
+                </List.Item>
+              )}
+            />
           </Card>
         </Col>
       </Row>
-      <Row className="Ranking">
-        <Col span={16} offset={4}>
+      <Row className="ranking">
+        <Col span={18} offset={3}>
           <Card
-            className="RankingCard"
+            className="card"
             title="Artistas do momento"
             extra={<a href="#">Mostrar top 100 artistas</a>}
           >
-            <div className="RankingItems">
-              <ol>{artists.map(renderArtistli)}</ol>
-            </div>
+            <List
+              grid={{ gutter: 16  , column: 3 }}
+              dataSource={artists}
+              renderItem={(item, index) => (
+                <List.Item>
+                  <List.Item.Meta
+                    title={<a href="/artist">{index + 1} - {item.name}</a>}
+                  />
+                </List.Item>
+              )}
+            />
           </Card>
         </Col>
       </Row>
