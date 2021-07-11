@@ -4,9 +4,13 @@ import { Logolayout } from "./layout/Logolayout";
 import { LoginPage } from "./pages/Login";
 import RankingPage from "./pages/Ranking";
 import Home from "./pages/Home";
-<<<<<<< HEAD
 import {SignUpPage} from "./pages/SignUp"
 import {RecoverPasswordPage} from "./pages/RecoverPassword";
+import AddChordsPage from "./pages/AddChords";
+import ChordsPage from "./pages/Chords";
+import UserPage from "./pages/User";
+import ArtistsList from "./pages/Artists";
+import Artist from "./pages/Artist";
 
 const RouteWithLayout = ({ component: Component, layout: Layout, ...rest }) => (
   <Route
@@ -23,12 +27,10 @@ export const App = () => {
   return (
     <>
       <Router>
-<<<<<<< HEAD
         <RouteWithLayout layout={MainLayout} path="/home" component={Home} />
         <RouteWithLayout layout={Logolayout} path="/login" component={LoginPage} />
         <RouteWithLayout layout={Logolayout}  Route path="/signup" component={SignUpPage}/>
         <RouteWithLayout layout={Logolayout} Route path="/recoverpassword" component={RecoverPasswordPage}/>
-=======
         <Route path="/login" component={LoginPage} />
         <RouteWithLayout exact layout={MainLayout} path={ ["/", "/home"] } component={Home} />
         <RouteWithLayout layout={MainLayout} path="/artists" component={ArtistsList} />
@@ -45,7 +47,6 @@ export const App = () => {
           path="/chords"
           component={ChordsPage}
         ></RouteWithLayout>
->>>>>>> 3f49e9ee3119e31287c6f6a5571874d600ceeffe
       </Router>
     </>
   );
