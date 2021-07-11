@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Card, Row, Col, List, Badge, Avatar } from "antd";
 import "./Home.css";
-
-import { Card, Row, Col } from "antd";
 
 function Home() {
   const [songs, setSongs] = useState([]);
@@ -34,48 +33,57 @@ function Home() {
     return await response.json();
   };
 
-  const renderSongsli = (row) => {
-    return (
-      <li>
-        <b>{row.name}</b>
-        <p>{row.art.name}</p>
-      </li>
-    );
-  };
-
-  const renderArtistli = (row) => {
-    return (
-      <li>
-        <b>{row.name}</b>
-      </li>
-    );
-  };
+  const getArtistId = (name) => {
+    return name.toLowerCase().replaceAll(' ', '-');
+  }
 
   return (
     <>
-      <Row className="Ranking">
-        <Col span={16} offset={4}>
+      <Row className="ranking">
+        <Col span={18} offset={3}>
           <Card
-            className="RankingCard"
+            className="card"
             title="Músicas do momento"
-            extra={<a href="#">Mostrar top 100 músicas</a>}
+            extra={<a href="#">Mostrar mais</a>}
           >
-            <div className="RankingItems">
-              <ol>{songs.map(renderSongsli)}</ol>
-            </div>
+            <List
+              grid={{ gutter: 16  , column: 3 }}
+              dataSource={songs}
+              renderItem={(item, index) => (
+                <List.Item>
+                  <List.Item.Meta
+                    title={<a href="/chords">{index + 1} - {item.name}</a>}
+                    description={item.art.name}
+                  />
+                </List.Item>
+              )}
+            />
           </Card>
         </Col>
       </Row>
-      <Row className="Ranking">
-        <Col span={16} offset={4}>
+      <Row className="ranking">
+        <Col span={18} offset={3}>
           <Card
-            className="RankingCard"
+            className="card"
             title="Artistas do momento"
-            extra={<a href="#">Mostrar top 100 artistas</a>}
+            extra={<a href="/artists">Mostrar mais</a>}
           >
-            <div className="RankingItems">
-              <ol>{artists.map(renderArtistli)}</ol>
-            </div>
+            <List
+              grid={{ gutter: 16  , column: 3 }}
+              dataSource={artists}
+              renderItem={(item, index) => (
+                <List.Item>
+                  <List.Item.Meta
+                    avatar={
+                      <Badge count={index + 1}  style={{ backgroundColor: '#52c41a' }}>
+                        <Avatar src={item.pic_medium} />
+                      </Badge>
+                    }
+                    title={<a href={`/artist/${getArtistId(item.name)}`}>{item.name}</a>}
+                  />
+                </List.Item>
+              )}
+            />
           </Card>
         </Col>
       </Row>

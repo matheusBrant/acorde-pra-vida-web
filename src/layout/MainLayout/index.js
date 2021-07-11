@@ -25,10 +25,13 @@ export const MainLayout = (props) => {
                   <Link to="/home">Home</Link>
                 </Menu.Item>
                 <Menu.Item key="artistas">
-                  <Link to="/artistas">Artistas</Link>
+                  <Link to="/artists">Artistas</Link>
                 </Menu.Item>
                 <Menu.Item key="musicas">
                   <Link to="/musicas">Músicas</Link>
+                </Menu.Item>
+                <Menu.Item key="ranking">
+                  <Link to="/ranking">Ranking</Link>
                 </Menu.Item>
               </Menu>
             </Col>
