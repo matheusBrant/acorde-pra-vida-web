@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Card, Row, Col, List, Badge, Avatar } from "antd";
 import "./Home.css";
-
-import { Card, Row, Col, List } from "antd";
 
 function Home() {
   const [songs, setSongs] = useState([]);
@@ -34,13 +33,9 @@ function Home() {
     return await response.json();
   };
 
-  const renderArtistli = (row) => {
-    return (
-      <li>
-        <b>{row.name}</b>
-      </li>
-    );
-  };
+  const getArtistId = (name) => {
+    return name.toLowerCase().replaceAll(' ', '-');
+  }
 
   return (
     <>
@@ -49,7 +44,7 @@ function Home() {
           <Card
             className="card"
             title="Músicas do momento"
-            extra={<a href="#">Mostrar top 100 músicas</a>}
+            extra={<a href="#">Mostrar mais</a>}
           >
             <List
               grid={{ gutter: 16  , column: 3 }}
@@ -71,7 +66,7 @@ function Home() {
           <Card
             className="card"
             title="Artistas do momento"
-            extra={<a href="#">Mostrar top 100 artistas</a>}
+            extra={<a href="/artists">Mostrar mais</a>}
           >
             <List
               grid={{ gutter: 16  , column: 3 }}
@@ -79,7 +74,12 @@ function Home() {
               renderItem={(item, index) => (
                 <List.Item>
                   <List.Item.Meta
-                    title={<a href="/artist">{index + 1} - {item.name}</a>}
+                    avatar={
+                      <Badge count={index + 1}  style={{ backgroundColor: '#52c41a' }}>
+                        <Avatar src={item.pic_medium} />
+                      </Badge>
+                    }
+                    title={<a href={`/artist/${getArtistId(item.name)}`}>{item.name}</a>}
                   />
                 </List.Item>
               )}
