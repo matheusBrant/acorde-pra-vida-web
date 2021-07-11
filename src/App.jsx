@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import AddChordsPage from "./pages/AddChords";
 import ChordsPage from "./pages/Chords";
 import UserPage from "./pages/User";
+import ArtistsList from "./pages/Artists";
+import Artist from "./pages/Artist";
 
 const RouteWithLayout = ({ component: Component, layout: Layout, ...rest }) => (
   <Route
@@ -24,6 +26,8 @@ export const App = () => {
       <Router>
         <Route path="/login" component={LoginPage} />
         <RouteWithLayout exact layout={MainLayout} path={ ["/", "/home"] } component={Home} />
+        <RouteWithLayout layout={MainLayout} path="/artists" component={ArtistsList} />
+        <RouteWithLayout layout={MainLayout} path="/artist/:artist" component={Artist} />
         <RouteWithLayout layout={MainLayout} path="/user" component={UserPage} />
         <RouteWithLayout layout={MainLayout} path="/ranking" component={RankingPage} />
         <RouteWithLayout
