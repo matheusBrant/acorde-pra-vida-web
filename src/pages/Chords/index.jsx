@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Col, Row } from "antd";
+import "./Chords.css";
 
 export default function ChordsPage() {
   const chords = {
@@ -12,11 +13,12 @@ export default function ChordsPage() {
   };
 
   return (
-    <Row justify="space-around" align="middle">
+    <Row className="chord" justify="space-around" align="middle">
       <Col span={20}>
         <Card
+          className="rankingCard"
           title={`${chords.songName} - ${chords.artistName}`}
-          extra={`Dificuldade: ${chords.level}`}
+          extra={<span class="level">Dificuldade: {chords.level}</span>}
         >
           <p dangerouslySetInnerHTML={{ __html: chords.chordsHtmlString }}></p>
         </Card>

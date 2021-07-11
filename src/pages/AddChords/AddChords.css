@@ -1,11 +1,3 @@
-.col {
-  /* border: 1px solid black; */
-}
-
-.row {
-  /* border: 1px solid red; */
-}
-
 #components-grid-demo-flex-align [class~="row"] {
   background: rgba(128, 128, 128, 0.08);
 }
@@ -20,6 +12,14 @@ h1 {
   height: 600px;
   max-height: 600px;
   width: 100%;
+}
+
+.editorCard {
+  height: 100%;
+}
+
+.rdw-editor-main {
+  height: 90% !important;
 }
 
 /* .preview {
