@@ -39,7 +39,7 @@ export default function AddChordsPage() {
         justify="space-around"
       >
         <Col sm={20} xl={12}>
-          <Card className="rankingCard editorCard">
+          <Card className="card editorCard">
             <Editor
               editorClassName="editor"
               wrapperClassName="editor-wrapper"
@@ -66,7 +66,7 @@ export default function AddChordsPage() {
           ></div>
         </Card> */}
         <Col sm={20} xl={11} className="col">
-          <Card className="rankingCard ChordsInfo" title="Informações da música">
+          <Card className="card ChordsInfo" title="Informações da música">
             <Row
               gutter={[0, 24]}
               justify="space-around"

@@ -16,7 +16,7 @@ export default function ChordsPage() {
     <Row className="chord" justify="space-around" align="middle">
       <Col span={20}>
         <Card
-          className="rankingCard"
+          className="card"
           title={`${chords.songName} - ${chords.artistName}`}
           extra={<span class="level">Dificuldade: {chords.level}</span>}
         >

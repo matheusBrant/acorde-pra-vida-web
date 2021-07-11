@@ -47,7 +47,7 @@ function Home() {
       <Row className="ranking">
         <Col span={18} offset={3}>
           <Card
-            className="rankingCard"
+            className="card"
             title="Músicas do momento"
             extra={<a href="#">Mostrar top 100 músicas</a>}
           >
@@ -69,7 +69,7 @@ function Home() {
       <Row className="ranking">
         <Col span={18} offset={3}>
           <Card
-            className="rankingCard"
+            className="card"
             title="Artistas do momento"
             extra={<a href="#">Mostrar top 100 artistas</a>}
           >
