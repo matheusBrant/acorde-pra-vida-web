@@ -14,7 +14,6 @@ export const LoginPage = () => {
   return (
     <>
       <div className="login-container">
-        <h1>Login page</h1>
         <Form
           name="normal_login"
           className="login-form"
@@ -51,32 +50,42 @@ export const LoginPage = () => {
               type="password"
               placeholder="Senha"
             />
+
+
           </Form.Item>
-          <Form.Item>
-            <Form.Item name="remember" valuePropName="checked" noStyle>
+
+             <Form.Item>
+                  <a className="login-form-forgot" href="/recoverpassword"> Esqueci a senha</a>
+             </Form.Item>
+            
+            {/* <Form.Item name="remember" valuePropName="checked" noStyle>
               <Checkbox>Mantenha-me logado</Checkbox>
-            </Form.Item>
+              </Form.Item> */}
 
-            <a className="login-form-forgot" href="">
-              Esqueci a senha
-            </a>
-          </Form.Item>
 
-          <Form.Item>
+
+            <div className="loginbutton">
             <Button
               type="primary"
               htmlType="submit"
               className="login-form-button"
-              loading="true"
+              loading="false"
             >
               Log in
             </Button>
-          </Form.Item>
+            </div >
 
-          <p>
-            {" "}
-            Não tem uma conta? <a href="">Registrar-se</a>
-          </p>
+
+
+
+
+
+
+            <p className="registrar">Não possui uma conta? <a href="/signup">Registrar-se</a> </p>
+
+
+
+
         </Form>
       </div>
     </>
