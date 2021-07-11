@@ -25,6 +25,7 @@ export const App = () => {
         <Route path="/login" component={LoginPage} />
         <RouteWithLayout exact layout={MainLayout} path={ ["/", "/home"] } component={Home} />
         <RouteWithLayout layout={MainLayout} path="/user" component={UserPage} />
+        <RouteWithLayout layout={MainLayout} path="/ranking" component={RankingPage} />
         <RouteWithLayout
           layout={MainLayout}
           path="/add-chords"
