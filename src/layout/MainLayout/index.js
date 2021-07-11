@@ -36,8 +36,8 @@ export const MainLayout = (props) => {
               </Menu>
             </Col>
             <Col className="botoes">
-              <Button ghost>Logar</Button>
-              <Button type="link">Cadastrar</Button>
+              <Button ghost><a href="/login">Logar</a></Button>
+              <Button type="link"><a href="/signup">Cadastrar</a></Button>
             </Col>
           </Row>
         </Header>
