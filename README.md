@@ -21,13 +21,13 @@ Para executar o projeto local, execute os seguintes comandos na pasta raiz:
 
 - Gestão de usuários:
   - ~~(4%) Receber e-mail ao se cadastrar
-  - (3%) Fluxo de "esqueci minha senha"
+  - ~~(3%) Fluxo de "esqueci minha senha"
   - ~~(5%) Integração com autenticação por 3ºs (Google)
   - (3-7%) Possibilidade de alterar dados do perfil
   - ~~(5%) Autenticação de 2 fatores~~
 - Engenharia de Software:
-  - (1-10%) Testes automatizados
-  - (2-6%) Processo de _build_ para _assets_ do _front-end_:
+  - ~~(1-10%) Testes automatizados
+  - ~~(2-6%) Processo de _build_ para _assets_ do _front-end_:
     - Minimizar arquivos CSS e JS
     - Eliminação de código morto JS
   - (5%) Integração contínua durante o desenvolvimento (_build_ + test + _deploy_)
