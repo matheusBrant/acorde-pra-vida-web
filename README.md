@@ -22,7 +22,6 @@ Para executar o projeto local, execute os seguintes comandos na pasta raiz:
 - Gestão de usuários:
   - (3-7%) Possibilidade de alterar dados do perfil
 - Engenharia de Software:
-  - (5%) Integração contínua durante o desenvolvimento (_build_ + test + _deploy_)
   - (5%) Descrição histórias de usuário
 - Integração:
   - (5-10%) APIs de terceiros para fornecer dados do usuário (API do Letras)
