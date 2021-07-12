@@ -27,6 +27,4 @@ Para executar o projeto local, execute os seguintes comandos na pasta raiz:
   - (5-10%) APIs de terceiros para fornecer dados do usuário (API do Letras)
 - _Front-end_:
   - (2-5%) Animações, transições e efeitos visuais diversos (onde fizer sentido)
-
   - (5%) Organização em componentes
-  - (3-10%) Uso de APIs do HTML5 (vide seminário)
