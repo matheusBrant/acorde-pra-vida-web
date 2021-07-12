@@ -28,7 +28,7 @@ export const MainLayout = (props) => {
                   <Link to="/artists">Artistas</Link>
                 </Menu.Item>
                 <Menu.Item key="musicas">
-                  <Link to="/musicas">Músicas</Link>
+                  <Link to="/songs">Músicas</Link>
                 </Menu.Item>
                 <Menu.Item key="ranking">
                   <Link to="/ranking">Ranking</Link>
@@ -43,7 +43,7 @@ export const MainLayout = (props) => {
         </Header>
         <Content>{props.children}</Content>
         <Footer style={{ textAlign: "center" }}>
-          Ant Design ©2018 Created by Ant UED
+          Acorde pra vida | ©2021
         </Footer>
       </Layout>
     </>
