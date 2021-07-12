@@ -20,9 +20,9 @@ Para executar o projeto local, execute os seguintes comandos na pasta raiz:
 ## Opicionais que serão abordados
 
 - Gestão de usuários:
-  - (4%) Receber e-mail ao se cadastrar
+  - ~~(4%) Receber e-mail ao se cadastrar
   - (3%) Fluxo de "esqueci minha senha"
-  - (5%) Integração com autenticação por 3ºs (Google)
+  - ~~(5%) Integração com autenticação por 3ºs (Google)
   - (3-7%) Possibilidade de alterar dados do perfil
   - ~~(5%) Autenticação de 2 fatores~~
 - Engenharia de Software:
@@ -31,7 +31,7 @@ Para executar o projeto local, execute os seguintes comandos na pasta raiz:
     - Minimizar arquivos CSS e JS
     - Eliminação de código morto JS
   - (5%) Integração contínua durante o desenvolvimento (_build_ + test + _deploy_)
-  - (5%) Uso de _containers_ (eg Docker) para isolar ambientes e torná-los facilmente reprodutíveis
+  - ~~(5%) Uso de _containers_ (eg Docker) para isolar ambientes e torná-los facilmente reprodutíveis
   - (5%) Descrição histórias de usuário
     - (+5%) Uso de _pull requests_ (PRs) para cada história
 - Integração:
@@ -46,8 +46,8 @@ Para executar o projeto local, execute os seguintes comandos na pasta raiz:
     - ~~Algoritmos de computação gráfica _off-line_ (eg, _ray tracing_)~~
 - _Front-end_:
 
-  - (7%) Todas as páginas _responsive_
-  - (3%) Modo escuro
+  - ~~(7%) Todas as páginas _responsive_
+  - ~~(3%) Modo escuro
   - (2-5%) Animações, transições e efeitos visuais diversos (onde fizer sentido)
     - ~~(2%) Modo com menos animações~~
   - ~~(2%) Modo de impressão (se fizer sentido)~~
