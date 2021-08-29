@@ -3,14 +3,30 @@ import "./SignUp.css";
 import { Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { useState } from "react";
+import  Axios from 'axios'
 
 
 export const SignUpPage = () => {
-    const [finish, setFinish] = useState(false);
-  
-    const onFinish = (values) => {
-      console.log("Received values of form: ", values);
-    };
+    const [usuarionome,setusuarionome] = useState('');
+    const [usuarioemail, setusuarioemail] = useState('');
+    const [usuariosenha, setusuariosenha] = useState('');
+    const [usuariorepetirsenha, setusuariorepetirsenha] = useState('');
+
+  const cadastarusuario = () => {
+
+    console.log('teste 1')
+    if(usuariosenha===usuariorepetirsenha){
+      
+      console.log('teste 2')
+
+      Axios.post("http://localhost:3001/api/insertuser",{
+      usuarioemail: usuarioemail,
+      usuariosenha: usuariosenha,
+      usuarionome: usuarionome,
+        }).then(()=> alert('deu bom'))
+    }
+  };
+
 
 
     return (
@@ -36,10 +52,13 @@ export const SignUpPage = () => {
                   },
                 ]}
               >
-                <Input
-                  prefix={<UserOutlined className="site-form-item-icon" />}
-                  placeholder="Nome"
+                <Input  prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Nome" onChange={(e)=> {
+                  setusuarionome(e.target.value)
+
+                }}
                 />
+
+
               </Form.Item>
 
               <Form.Item
@@ -52,8 +71,10 @@ export const SignUpPage = () => {
                 ]}
               >
                 <Input
-                  prefix={<UserOutlined className="site-form-item-icon" />}
-                  placeholder="Email"
+                  prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Email" onChange={(e)=> {
+                    setusuarioemail(e.target.value)
+  
+                  }}
                 />
               </Form.Item>
 
@@ -69,9 +90,10 @@ export const SignUpPage = () => {
                 ]}
               >
                 <Input
-                  prefix={<LockOutlined className="site-form-item-icon" />}
-                  type="password"
-                  placeholder="Senha"
+                  prefix={<LockOutlined className="site-form-item-icon" />} type="password" placeholder="Senha" onChange={(e)=> {
+                    setusuariosenha(e.target.value)
+  
+                  }}
                 />
     
               </Form.Item>
@@ -87,9 +109,10 @@ export const SignUpPage = () => {
                 ]}
               >
                 <Input
-                  prefix={<LockOutlined className="site-form-item-icon" />}
-                  type="password"
-                  placeholder="Repetir a senha"
+                  prefix={<LockOutlined className="site-form-item-icon" />} type="password" placeholder="Repetir a senha" onChange={(e)=> {
+                    setusuariorepetirsenha(e.target.value)
+  
+                  }}
                 />
     
               </Form.Item>
@@ -97,11 +120,7 @@ export const SignUpPage = () => {
     
     
                 <div className="signupbutton">
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  className="register-form-button"
-                  loading="false"
+                <Button type="primary" htmlType="submit" className="register-form-button"  onClick={cadastarusuario}
                 >
                   Cadastrar
                 </Button>

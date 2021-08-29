@@ -3,6 +3,11 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
+-- mudando permisoes
+-- -----------------------------------------------------
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
+
+-- -----------------------------------------------------
 -- Schema AcordePraVida
 -- -----------------------------------------------------
 DROP SCHEMA IF EXISTS `AcordePraVida` ;
@@ -58,6 +63,8 @@ CREATE TABLE IF NOT EXISTS `AcordePraVida`.`musica` (
 `nome` VARCHAR(256),
 `dificuldade` INT NULL,
 `visualizacoes` INT NULL,
+`videourl` VARCHAR(256) NOT NULL,
+`genero` VARCHAR(256) NOT NULL,
 `artistaid` INT NOT NULL,
 `notaid` INT NOT NULL)
 ENGINE = InnoDB;
@@ -72,6 +79,8 @@ CREATE TABLE IF NOT EXISTS `AcordePraVida`.`artista` (
 `artistaid` INT PRIMARY KEY AUTO_INCREMENT,
 `nome` VARCHAR(256),
 `visualizacoes` INT NULL,
+`genero` VARCHAR(256) NOT NULL,
+`fotourl` VARCHAR(256) NOT NULL, 
 `notaid` INT NOT NULL)
 ENGINE = InnoDB;
 
