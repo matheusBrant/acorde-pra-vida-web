@@ -12,6 +12,12 @@ export const SignUpPage = () => {
     const [usuariosenha, setusuariosenha] = useState('');
     const [usuariorepetirsenha, setusuariorepetirsenha] = useState('');
 
+    const [finish, setFinish] = useState(false);
+  
+    const onFinish = (values) => {
+      console.log("Received values of form: ", values);
+    };
+
   const cadastarusuario = () => {
 
     console.log('teste 1')
