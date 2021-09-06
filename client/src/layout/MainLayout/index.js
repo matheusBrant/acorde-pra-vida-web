@@ -29,7 +29,7 @@ export const MainLayout = (props) => {
             <img className="logo" src={logo} />
           </div>
           <Row>
-            <Col offset={8} span={11}>
+            <Col offset={6} xs={2} sm={4} md={6} lg={8} xl={14}>
               <Menu className="navegacao" theme="dark" mode="horizontal">
                 <Menu.Item key="home">
                   <Link to="/home">Home</Link>

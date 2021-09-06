@@ -9,8 +9,8 @@ h1 {
 .editor,
 .editor-wrapper {
   background: #fff;
-  height: 600px;
-  max-height: 600px;
+  height: 100vh;
+  max-height: 100vh;
   width: 100%;
 }
 

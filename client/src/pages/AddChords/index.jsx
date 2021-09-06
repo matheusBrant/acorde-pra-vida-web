@@ -3,6 +3,7 @@ import "./AddChords.css";
 import React, { useState, useEffect } from "react";
 import { Card, Row, Col, Input, Form, Button, Select } from "antd";
 import YouTube from "react-youtube";
+import  Axios from 'axios';
 
 import AddChordsForm from "./AddChordsForm";
 
@@ -15,12 +16,45 @@ import draftToHtml from "draftjs-to-html";
 export default function AddChordsPage() {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const [chordsHtmlString, setChordsHtmlString] = useState("");
+  const [artists, setArtists] = useState([]);
   const [youtubeVideoId, setYoutubeVideoId] = useState("");
+
+  // executado 1 vez ao renderizar o component
+  useEffect(() => {
+    async function fetchApi() {
+      await getArtists();
+    }
+
+    fetchApi();
+  }, []);
 
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
     let result = draftToHtml(convertToRaw(editorState.getCurrentContent()));
     setChordsHtmlString(result);
+  };
+
+  
+  const getArtists = async () => {
+    const artists = (await Axios.get(`/api/artists?take=${100000}0&skip=0`)).data;
+    setArtists(artists.items);
+  };
+
+  const save = async (object) => {
+    Axios.post("/api/songs", {
+      name: object.songName,
+      artistId: object.artistId,
+      userId: 1,
+      content: object.chordsHtmlString,
+      level: object.level,
+      genre: object.genre,
+      videoUrl: object.youtubeUrl
+    })
+    .then((id)=> {
+      alert('Criado com sucesso');
+      window.location.href = "/home";
+    })
+    .catch((err) => alert(err.message));
   };
 
   return (
@@ -75,6 +109,8 @@ export default function AddChordsPage() {
               <AddChordsForm
                 onYoutubeVideoUpdate={setYoutubeVideoId}
                 chordsHtmlString={chordsHtmlString}
+                onSave={save}
+                artists={artists}
               ></AddChordsForm>
             </Row>
             <Row
