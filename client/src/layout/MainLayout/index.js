@@ -2,6 +2,7 @@ import { Layout, Menu, Input, Button, Row, Col } from "antd";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./MainLayout.css";
+import logo from './logo.png';
 
 const { Header, Content, Footer } = Layout;
 
@@ -24,7 +25,9 @@ export const MainLayout = (props) => {
     <>
       <Layout className="layout" style={{ minHeight: "100%" }}>
         <Header>
-          <div className="logo" />
+          <div >
+            <img className="logo" src={logo} />
+          </div>
           <Row>
             <Col offset={8} span={11}>
               <Menu className="navegacao" theme="dark" mode="horizontal">
