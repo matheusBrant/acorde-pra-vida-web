@@ -5,6 +5,8 @@ const { Option } = Select;
 export default function AddChordsForm({
   onYoutubeVideoUpdate,
   chordsHtmlString,
+  onSave,
+  artists
 }) {
   const youtubeUrlRegex = /https:\/\/www\.youtube\.com\/watch\?v=(.{11})/;
 
@@ -17,8 +19,10 @@ export default function AddChordsForm({
 
   function handleFinish(object) {
     object.chordsHtmlString = chordsHtmlString;
-    console.log(object);
+    onSave(object);
   }
+
+  const options = artists.map(f => <Option key={f.artistId}>{f.name}</Option>);
 
   return (
     <Form layout="vertical" onFinish={handleFinish}>
@@ -39,16 +43,37 @@ export default function AddChordsForm({
         </Col>
         <Col span={12}>
           <Form.Item
-            name={["artistName"]}
+            name={["artistId"]}
             label="Artista"
             rules={[
               {
                 required: true,
-                message: "Escreva o artista da música!",
+                message: "Selecione o artista da música!",
               },
             ]}
           >
-            <Input placeholder="Ex. Xuxa" />
+            <Select
+            showSearch
+            placeholder="Ex. Tim Maia"
+            filterOption={(input, option) =>
+              option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+            }>
+              {options}
+            </Select>
+          </Form.Item>
+        </Col>
+        <Col span={12}>
+          <Form.Item
+            name={["genre"]}
+            label="Gênero"
+            rules={[
+              {
+                required: true,
+                message: "Escreva o gênero da música!",
+              },
+            ]}
+          >
+            <Input placeholder="Ex. MPB" />
           </Form.Item>
         </Col>
         <Col span={10}>
@@ -63,9 +88,9 @@ export default function AddChordsForm({
             ]}
           >
             <Select placeholder="Ex. Fácil">
-              <Option value="easy">Fácil</Option>
-              <Option value="medium">Médio</Option>
-              <Option value="hard">Difícil</Option>
+              <Option value="1">Fácil</Option>
+              <Option value="2">Médio</Option>
+              <Option value="3">Difícil</Option>
             </Select>
           </Form.Item>
         </Col>
@@ -88,7 +113,7 @@ export default function AddChordsForm({
       </Row>
       <Row justify="end">
         <Button type="primary" htmlType="submit">
-          Salvar usuário
+          Salvar
         </Button>
       </Row>
     </Form>

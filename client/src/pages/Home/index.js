@@ -48,7 +48,7 @@ function Home() {
               renderItem={(item, index) => (
                 <List.Item>
                   <List.Item.Meta
-                    title={<a href="/chords">{index + 1} - {item.name}</a>}
+                    title={<a href={`/song/${item.songId}`}>{index + 1} - {item.name}</a>}
                     description={item.genre}
                   />
                 </List.Item>
