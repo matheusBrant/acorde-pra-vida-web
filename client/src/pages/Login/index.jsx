@@ -6,9 +6,10 @@ import { useState } from "react";
 import { useHistory } from "react-router";
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { useUserContext } from "../../context/UserContext";
 
 export const LoginPage = () => {
-  
+  const { setUser, setIsUserLogged } = useUserContext()
   let history = useHistory();
 
   const [finish, setFinish] = useState(false);
@@ -28,6 +29,8 @@ export const LoginPage = () => {
     .then((response) => {
       console.log(response.data.user);
       localStorage.setItem('user',JSON.stringify(response.data.user))
+      setUser(response.data.user);
+      setIsUserLogged(true);
       history.push('/home');
     }, (error) => {
       Swal.fire({
