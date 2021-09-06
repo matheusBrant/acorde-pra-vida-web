@@ -1,10 +1,26 @@
 import { Layout, Menu, Input, Button, Row, Col } from "antd";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./MainLayout.css";
 
 const { Header, Content, Footer } = Layout;
 
 export const MainLayout = (props) => {
+  
+  const [isUserLogged, setisUserLogged] = useState(false);
+  const [user, setUser] = useState({});
+
+  useEffect (function(){
+
+    let userValues = localStorage.getItem('user')
+    console.log('userValues → ', JSON.parse(userValues).name)
+    if(userValues){
+      setisUserLogged(true)
+      setUser(JSON.parse(userValues))
+    }
+    
+  },[]) 
+  
   return (
     <>
       <Layout className="layout" style={{ minHeight: "100%" }}>

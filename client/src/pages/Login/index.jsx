@@ -26,8 +26,8 @@ export const LoginPage = () => {
       password: usuariosenha
     })
     .then((response) => {
-      console.log(response);
-      
+      console.log(response.data.user);
+      localStorage.setItem('user',JSON.stringify(response.data.user))
       history.push('/home');
     }, (error) => {
       Swal.fire({
