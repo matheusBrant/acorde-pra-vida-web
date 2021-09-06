@@ -3,19 +3,19 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./MainLayout.css";
 import logo from './logo.png';
+import { useUserContext } from "../../context/UserContext";
 
 const { Header, Content, Footer } = Layout;
 
 export const MainLayout = (props) => {
-  
-  const [isUserLogged, setisUserLogged] = useState(false);
-  const [user, setUser] = useState({});
+
+  const { user, setUser, isUserLogged, setIsUserLogged } = useUserContext()
 
   useEffect (function(){
+    let userValues = localStorage.getItem('user');
 
-    let userValues = localStorage.getItem('user')
     if(userValues){
-      setisUserLogged(true)
+      setIsUserLogged(true)
       setUser(JSON.parse(userValues))
     }
     
@@ -47,7 +47,7 @@ export const MainLayout = (props) => {
             </Col>
             { isUserLogged &&
             <Col className="botoes">
-              <Button type="link"><a href="/signup">Olá {user.name}</a></Button>
+              <Button type="link"><a href="/signup">Olá, {user.name}</a></Button>
               <Button onClick={localStorage.removeItem('user')} ghost><a href="/home">Sair</a></Button>            
             </Col> }
             { !isUserLogged &&
