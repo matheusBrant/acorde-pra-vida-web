@@ -55,7 +55,7 @@ export default function Artist(props) {
                   renderItem={(item, index) => (
                     <List.Item>
                       <List.Item.Meta
-                        title={<a href="/chords">{index + 1} - {item.desc}</a>}
+                        title={<span>{index + 1} - {item.desc}</span>}
                       />
                     </List.Item>
                   )}
@@ -76,7 +76,7 @@ export default function Artist(props) {
                   renderItem={(item, index) => (
                     <List.Item>
                       <List.Item.Meta
-                        title={<a href="/chords">{index + 1} - {item.desc}</a>}
+                        title={<span>{index + 1} - {item.desc}</span>}
                       />
                     </List.Item>
                   )}

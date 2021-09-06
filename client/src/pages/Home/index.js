@@ -75,7 +75,7 @@ function Home() {
                         <Avatar src={item.photoUrl} />
                       </Badge>
                     }
-                    title={<a href={`/artist/${getArtistId(item.name)}`}>{item.name}</a>}
+                    title={<a href={`/artist/${item.artistId}`}>{item.name}</a>}
                   />
                 </List.Item>
               )}
