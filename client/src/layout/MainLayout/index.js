@@ -13,14 +13,13 @@ export const MainLayout = (props) => {
   useEffect (function(){
 
     let userValues = localStorage.getItem('user')
-    console.log('userValues → ', JSON.parse(userValues).name)
     if(userValues){
       setisUserLogged(true)
       setUser(JSON.parse(userValues))
     }
     
   },[]) 
-  
+
   return (
     <>
       <Layout className="layout" style={{ minHeight: "100%" }}>
@@ -51,10 +50,16 @@ export const MainLayout = (props) => {
                 </Menu.Item>
               </Menu>
             </Col>
+            { isUserLogged &&
+            <Col className="botoes">
+              <Button type="link"><a href="/signup">Olá {user.name}</a></Button>
+              <Button onClick={localStorage.removeItem('user')} ghost><a href="/home">Sair</a></Button>            
+            </Col> }
+            { !isUserLogged &&
             <Col className="botoes">
               <Button ghost><a href="/login">Logar</a></Button>
               <Button type="link"><a href="/signup">Cadastrar</a></Button>
-            </Col>
+            </Col> }
           </Row>
         </Header>
         <Content>{props.children}</Content>
