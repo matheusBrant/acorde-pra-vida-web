@@ -28,10 +28,6 @@ function ArtistsList() {
     getArtists(page);
   };
 
-  const getArtistId = (name) => {
-    return name.toLowerCase().replaceAll(' ', '-');
-  }
-
   return (
     <>
       <Row className="ranking">
@@ -52,7 +48,7 @@ function ArtistsList() {
                         <Avatar size="large" src={item.photoUrl} />
                       </Badge>
                     }
-                    title={<a href={`/artist/${getArtistId(item.name)}`}><h2 className="nome-artista">{item.name}</h2></a>}
+                    title={<a href={`/artist/${item.artistId}`}><h2 className="nome-artista">{item.name}</h2></a>}
                   />
                 </List.Item>
               )}

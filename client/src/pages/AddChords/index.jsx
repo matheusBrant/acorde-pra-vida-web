@@ -50,8 +50,9 @@ export default function AddChordsPage() {
       genre: object.genre,
       videoUrl: object.youtubeUrl
     })
-    .then(()=> {
+    .then((id)=> {
       alert('Criado com sucesso');
+      window.location.href = "/home";
     })
     .catch((err) => alert(err.message));
   };

@@ -1,30 +1,41 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col, Row, List, Image, Divider } from "antd";
 import "./Artist.css"
+import  Axios from 'axios';
 
 export default function Artist(props) {
-  const { artist } = props.match.params
+  const { artistId } = props.match.params
   const [artistInfo, setArtist] = useState({});
   const [toplyrics, setToplyrics] = useState([]);
   const [lyrics, setLyrics] = useState([]);
 
+  const getArtistId = (name) => {
+    return name.toLowerCase().replaceAll(' ', '-');
+  }
+
   useEffect(() => {
     async function fetchApi() {
-      const result = await getArtistInfo();
+      const result = await getArtist();
+      const resultInfo = await getArtistInfo(getArtistId(result.name));
 
-      setArtist(result.artist);
-      setToplyrics(result.artist.toplyrics.item);
-      setLyrics(result.artist.lyrics.item);
+      setArtist(result);
+      setToplyrics(resultInfo.artist.toplyrics.item);
+      setLyrics(resultInfo.artist.lyrics.item);
     }
 
     fetchApi();
   }, []);
 
-  const getArtistInfo = async () => {
+  const getArtistInfo = async (name) => {
     const response = await fetch(
-      `https://www.vagalume.com.br/${artist}/index.js`
+      `https://www.vagalume.com.br/${name}/index.js`
     );
     return await response.json();
+  };
+
+
+  const getArtist = async () => {
+    return (await Axios.get(`/api/artists/${artistId}`)).data;
   };
   
   return (
@@ -79,7 +90,7 @@ export default function Artist(props) {
             <Col span={22}>
               <Card
                 className="card"
-                title={artistInfo.desc}
+                title={artistInfo.name}
               >
                 <Row justify="center">
                   <Image
@@ -87,7 +98,7 @@ export default function Artist(props) {
                     style={{ borderRadius: '50%' }}
                     width={200}
                     height={200}
-                    src={`https://www.vagalume.com.br${artistInfo.pic_medium}`}
+                    src={artistInfo.photoUrl}
                   />
                 </Row>
                 <Divider type="horizontal" />

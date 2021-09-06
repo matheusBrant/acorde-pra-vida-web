@@ -33,7 +33,7 @@ export const App = () => {
         <RouteWithLayout layout={Logolayout} Route path="/recoverpassword" component={RecoverPasswordPage}/>
         <RouteWithLayout layout={MainLayout} exact path={ ["/", "/home"] } component={Home} />
         <RouteWithLayout layout={MainLayout} path="/artists" component={ArtistsList} />
-        <RouteWithLayout layout={MainLayout} path="/artist/:artist" component={Artist} />
+        <RouteWithLayout layout={MainLayout} path="/artist/:artistId" component={Artist} />
         <RouteWithLayout layout={MainLayout} path="/songs" component={SongsList} />
         <RouteWithLayout layout={MainLayout} path="/user" component={UserPage} />
         <RouteWithLayout layout={MainLayout} path="/ranking" component={RankingPage} />
