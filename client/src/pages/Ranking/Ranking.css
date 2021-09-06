@@ -2,8 +2,8 @@
   padding: 30px;
   text-align: center;
 }
-.h3{
-  margin-right: 100px;
+h3{
+  margin-top: 0px !important;
 }
 .tam-input{
   width:300px;
