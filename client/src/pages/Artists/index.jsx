@@ -49,7 +49,7 @@ function ArtistsList() {
                   <List.Item.Meta
                     avatar={
                       <Badge style={{ backgroundColor: '#52c41a' }}>
-                        <Avatar size="large" src={`https://www.vagalume.com.br/${getArtistId(item.name)}/images/${getArtistId(item.name)}.jpg`} />
+                        <Avatar size="large" src={item.photoUrl} />
                       </Badge>
                     }
                     title={<a href={`/artist/${getArtistId(item.name)}`}><h2 className="nome-artista">{item.name}</h2></a>}
