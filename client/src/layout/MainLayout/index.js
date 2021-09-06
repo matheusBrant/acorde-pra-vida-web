@@ -26,15 +26,7 @@ export const MainLayout = (props) => {
         <Header>
           <div className="logo" />
           <Row>
-            <Col span={8} className="pesquisarCol">
-              <Input.Search
-                theme="ligth"
-                className="pesquisar"
-                placeholder="Pesquisar"
-                allowClear
-              />
-            </Col>
-            <Col span={11}>
+            <Col offset={8} span={11}>
               <Menu className="navegacao" theme="dark" mode="horizontal">
                 <Menu.Item key="home">
                   <Link to="/home">Home</Link>

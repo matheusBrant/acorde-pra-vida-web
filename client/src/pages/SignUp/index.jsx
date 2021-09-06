@@ -3,8 +3,7 @@ import "./SignUp.css";
 import { Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { useState } from "react";
-import  Axios from 'axios'
-
+import  Axios from 'axios';
 
 export const SignUpPage = () => {
     const [usuarionome,setusuarionome] = useState('');
@@ -18,21 +17,23 @@ export const SignUpPage = () => {
       console.log("Received values of form: ", values);
     };
 
-  const cadastarusuario = () => {
-
-    console.log('teste 1')
-    if(usuariosenha===usuariorepetirsenha){
-      
-      console.log('teste 2')
-
-      Axios.post("http://localhost:3001/api/insertuser",{
-      usuarioemail: usuarioemail,
-      usuariosenha: usuariosenha,
-      usuarionome: usuarionome,
-        }).then(()=> alert('deu bom'))
-    }
-  };
-
+    const cadastrarusuario = () => {
+      if(usuariosenha === usuariorepetirsenha){
+        Axios.post("/api/signup", {
+          name: usuarionome,
+          email: usuarioemail,
+          emailConfirmation: usuarioemail,
+          password: usuariosenha
+        })
+        .then(()=> {
+          alert('Usuário cadastrado com sucesso');
+          window.location.href = "/login";
+        })
+        .catch((err) => alert(err.message));
+      } else {
+        alert('As senhas não são iguais');
+      }
+    };
 
 
     return (
@@ -126,7 +127,7 @@ export const SignUpPage = () => {
     
     
                 <div className="signupbutton">
-                <Button type="primary" htmlType="submit" className="register-form-button"  onClick={cadastarusuario}
+                <Button type="primary" htmlType="submit" className="register-form-button"  onClick={cadastrarusuario}
                 >
                   Cadastrar
                 </Button>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card, Row, Col, List, Badge, Avatar } from "antd";
 import "./Home.css";
+import  Axios from 'axios';
 
 function Home() {
   const [songs, setSongs] = useState([]);
@@ -12,25 +13,20 @@ function Home() {
       const songs = await getTopSongs();
       const artists = await getTopArtists();
 
-      setSongs(songs.mus.week.all);
-      setArtists(artists.art.week.all);
+      setSongs(songs);
+      setArtists(artists);
     }
 
     fetchApi();
   }, []);
-
+  
   const getTopSongs = async () => {
-    const response = await fetch(
-      "https://api.vagalume.com.br/rank.php?type=mus&period=week&periodVal=201134&scope=all&limit=10"
-    );
-    return await response.json();
+    return (await Axios.get(`/api/songs`)).data.items;
   };
 
-  const getTopArtists = async () => {
-    const response = await fetch(
-      "https://api.vagalume.com.br/rank.php?type=art&period=week&periodVal=201134&scope=all&limit=10"
-    );
-    return await response.json();
+
+  const getTopArtists = async (page) => {
+    return (await Axios.get(`/api/artists`)).data.items;
   };
 
   const getArtistId = (name) => {
@@ -44,7 +40,7 @@ function Home() {
           <Card
             className="card"
             title="Músicas do momento"
-            extra={<a href="#">Mostrar mais</a>}
+            extra={<a href="/songs">Mostrar mais</a>}
           >
             <List
               grid={{ gutter: 16  , column: 3 }}
@@ -53,7 +49,7 @@ function Home() {
                 <List.Item>
                   <List.Item.Meta
                     title={<a href="/chords">{index + 1} - {item.name}</a>}
-                    description={item.art.name}
+                    description={item.genre}
                   />
                 </List.Item>
               )}
@@ -76,7 +72,7 @@ function Home() {
                   <List.Item.Meta
                     avatar={
                       <Badge count={index + 1}  style={{ backgroundColor: '#52c41a' }}>
-                        <Avatar src={item.pic_medium} />
+                        <Avatar src={item.photoUrl} />
                       </Badge>
                     }
                     title={<a href={`/artist/${getArtistId(item.name)}`}>{item.name}</a>}
