@@ -38,7 +38,7 @@ function ArtistsList() {
         <Col span={18} offset={3}>
           <Card
             className="card"
-            title="Artistas do momento"
+            title="Artistas"
           >
             <List
               itemLayout="horizontal"
