@@ -38,6 +38,7 @@ export const App = () => {
         <RouteWithLayout layout={MainLayout} path="/user" component={UserPage} />
         <RouteWithLayout layout={MainLayout} path="/ranking" component={RankingPage} />
         <RouteWithLayout layout={MainLayout} path="/add-chords" component={AddChordsPage}/>
+        <RouteWithLayout layout={MainLayout} path="/chords" component={ChordsPage}/>
         <RouteWithLayout layout={MainLayout} path="/song/:song" component={ChordsPage} ></RouteWithLayout>
       </Router>
     </>

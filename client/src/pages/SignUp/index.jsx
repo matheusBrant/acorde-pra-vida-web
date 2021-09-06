@@ -3,8 +3,7 @@ import "./SignUp.css";
 import { Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { useState } from "react";
-import  Axios from 'axios'
-
+import  Axios from 'axios';
 
 export const SignUpPage = () => {
     const [usuarionome,setusuarionome] = useState('');
@@ -18,23 +17,23 @@ export const SignUpPage = () => {
       console.log("Received values of form: ", values);
     };
 
-  const cadastrarusuario = () => {
-    if(usuariosenha === usuariorepetirsenha){
-      Axios.post("/api/signup", {
-        name: usuarionome,
-        email: usuarioemail,
-        emailConfirmation: usuarioemail,
-        password: usuariosenha
-      })
-      .then(()=> {
-        alert('Usuário cadastrado com sucesso');
-        window.location.href = "/login";
-      })
-      .catch((err) => alert(err.message));
-    } else {
-      alert('As senhas não são iguais');
-    }
-  };
+    const cadastrarusuario = () => {
+      if(usuariosenha === usuariorepetirsenha){
+        Axios.post("/api/signup", {
+          name: usuarionome,
+          email: usuarioemail,
+          emailConfirmation: usuarioemail,
+          password: usuariosenha
+        })
+        .then(()=> {
+          alert('Usuário cadastrado com sucesso');
+          window.location.href = "/login";
+        })
+        .catch((err) => alert(err.message));
+      } else {
+        alert('As senhas não são iguais');
+      }
+    };
 
 
     return (
