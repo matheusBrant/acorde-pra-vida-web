@@ -3,7 +3,7 @@
 Frontend project for "Acorde pra vida!" website, part of the fianl project from Web Development subject at CEFET-MG
 
 Acesse o aplicativo [aqui](https://b6a1-2804-14c-5b96-8110-f5a9-2816-df12-256.ngrok.io/home)!
-A API utilizada está [aqui](https://github.com/mmdfmateus/acorde-pra-vida-api)!
+A API utilizada está [aqui](https://acordepravida-api.herokuapp.com/)!
 
 ## Integrantes
 

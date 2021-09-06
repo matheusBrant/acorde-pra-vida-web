@@ -6,7 +6,7 @@ import { ConfigProvider } from 'antd'
 import ptBR from 'antd/lib/locale/pt_BR';
 import * as axios from "axios";
 
-axios.defaults.baseURL = 'https://5664-191-185-197-51.ngrok.io';
+axios.defaults.baseURL = 'https://acordepravida-api.herokuapp.com';
 ReactDOM.render(
   <React.StrictMode>
     <ConfigProvider locale={ptBR}>
