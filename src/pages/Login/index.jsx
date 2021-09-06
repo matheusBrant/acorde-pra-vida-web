@@ -22,7 +22,7 @@ export const LoginPage = () => {
   const [usuariosenha, setusuariosenha] = useState('');
 
   const login = () => {
-    axios.post('https://5664-191-185-197-51.ngrok.io/api/login', {
+    axios.post('https://acordepravida-api.herokuapp.com/api/login', {
       email: usuarioemail,
       password: usuariosenha
     })
